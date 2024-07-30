@@ -10,22 +10,16 @@ Teste - CRUD
    # CRIAR
    Create Session  alias=api  url=https://serverest.dev
 
-   Criação de usuario
+   ${USER_ID}  Criação de usuario
 
-   Buscar usuario
-   
-   
-   # ATUALIZAR
-   ${RESPONSE}  PUT On Session    alias=api   url=/usuarios/${USER_ID}   headers=${header}   data={"nome": "Glaucio QA Senior Dois","email": "glaucioa2@qa.com.br","password": "teste","administrador": "true"}
-   ${retorno_put}  Set Variable  ${RESPONSE.json}
-   Log To Console  ${retorno_put}
+   Buscar usuario  USER_ID=${USER_ID}
 
-# LER Atualização
+   Atualizar dados usuario  USER_ID=${USER_ID}
 
-   # DELETAR
-   DELETE On Session  alias=api   url=/usuarios/${USER_ID}   
+   #Mostrar que houve alteração de usuario
+   Buscar usuario  USER_ID=${USER_ID} 
 
-   # CRIAR SESSÃO
+   Deletar usuario  USER_ID=${USER_ID} 
 
    # ENCERRAR
    Delete All Sessions
@@ -51,12 +45,20 @@ Buscar usuario
    Log To Console    ${retorno_get}
 
 Atualizar dados usuario
+   [Arguments]  ${USER_ID}
+   ${header}    Create Dictionary    Content-Type=application/json
+
+   ${RESPONSE}  PUT On Session    alias=api   url=/usuarios/${USER_ID}   headers=${header}   data={"nome": "Glaucio QA Senior Dois","email": "glaucioa2@qa.com.br","password": "teste","administrador": "true"}
+   ${retorno_put}  Set Variable  ${RESPONSE.json}
+   Log To Console  ${retorno_put}
 
 Deletar usuario
+   [Arguments]  ${USER_ID}
+   DELETE On Session  alias=api   url=/usuarios/${USER_ID}   
 
-Criar Sessão
+# Criar Sessão
 
-Deletar Sessão
+# Deletar Sessão
 
 
 
