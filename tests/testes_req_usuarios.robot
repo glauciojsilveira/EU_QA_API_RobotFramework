@@ -1,28 +1,30 @@
 *** Settings ***
 Library               RequestsLibrary
 
+Suite Setup    Criar Sessão
+Suite Teardown    Deletar Sessão
+
+
 *** Variables ***
 
 
 
 *** Test Cases ***
-Teste - CRUD 
-   # CRIAR
-   Create Session  alias=api  url=https://serverest.dev
-
+Teste - CRUD
+   # CREATE 
    ${USER_ID}  Criação de usuario
 
+   # READ
    Buscar usuario  USER_ID=${USER_ID}
 
+   # UPDATE
    Atualizar dados usuario  USER_ID=${USER_ID}
+   Buscar usuario  USER_ID=${USER_ID}     # Mostrar que houve alteração de usuario
 
-   #Mostrar que houve alteração de usuario
-   Buscar usuario  USER_ID=${USER_ID} 
-
+   # DELETE
    Deletar usuario  USER_ID=${USER_ID} 
 
-   # ENCERRAR
-   Delete All Sessions
+
 
 *** Keywords ***
 
@@ -34,9 +36,7 @@ Criação de usuario
    ${RESPONSE}  POST On Session    alias=api  url=/usuarios  headers=${header}   data={"nome": "Glaucio QA Senior","email": "glauciosilveiraqa@qa.com.br","password": "teste","administrador": "true"}
    ${USER_ID}    Set Variable    ${RESPONSE.json()['_id']}
    Log To Console    ${USER_ID}
-   
-   RETURN  ${USER_ID}    #Este RETURN habilita todos as outras requisições a usar o USER_ID
-
+   RETURN  ${USER_ID}     #Este RETURN habilita todos as outras requisições a usar o USER_ID
 
 Buscar usuario
    [Arguments]    ${USER_ID}
@@ -56,9 +56,12 @@ Deletar usuario
    [Arguments]  ${USER_ID}
    DELETE On Session  alias=api   url=/usuarios/${USER_ID}   
 
-# Criar Sessão
+Criar Sessão
+   Create Session  alias=api  url=https://serverest.dev
 
-# Deletar Sessão
+Deletar Sessão
+   Delete All Sessions
+
 
 
 

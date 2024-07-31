@@ -1,236 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.12.2 on win32)" generated="2024-07-30T17:46:29.521334" rpa="false" schemaversion="5">
-<suite id="s1" name="EU QA API" source="C:\TESTES\EU_QA_API">
-<suite id="s1-s1" name="Tests" source="C:\TESTES\EU_QA_API\tests">
-<suite id="s1-s1-s1" name="Testes Req Usuarios" source="C:\TESTES\EU_QA_API\tests\testes_req_usuarios.robot">
-<test id="s1-s1-s1-t1" name="Teste - CRUD" line="9">
+<robot generator="Robot 7.0.1 (Python 3.12.2 on win32)" generated="2024-07-31T18:17:22.435826" rpa="false" schemaversion="5">
+<suite id="s1" name="EU QA API" source="c:\TESTES\EU_QA_API">
+<suite id="s1-s1" name="Tests" source="c:\TESTES\EU_QA_API\tests">
+<suite id="s1-s1-s1" name="Testes Req Usuarios" source="c:\TESTES\EU_QA_API\tests\testes_req_usuarios.robot">
+<kw name="Criar Sessão" type="SETUP">
 <kw name="Create Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:29.870288" level="INFO">Creating Session using : alias=api, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<msg time="2024-07-31T18:17:22.862657" level="INFO">Creating Session using : alias=api, url=https://serverest.dev, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
 <arg>alias=api</arg>
 <arg>url=https://serverest.dev</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<status status="PASS" start="2024-07-30T17:46:29.870288" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:22.862657" elapsed="0.000000"/>
 </kw>
+<status status="PASS" start="2024-07-31T18:17:22.862657" elapsed="0.005095"/>
+</kw>
+<test id="s1-s1-s1-t1" name="Teste - CRUD" line="13">
 <kw name="Criação de usuario">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-07-30T17:46:29.870288" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<msg time="2024-07-31T18:17:22.867752" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-07-30T17:46:29.870288" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:22.867752" elapsed="0.000000"/>
 </kw>
 <kw name="POST On Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.210388" level="INFO">POST Request : url=https://serverest.dev/usuarios 
+<msg time="2024-07-31T18:17:23.512856" level="INFO">POST Request : url=https://serverest.dev/usuarios 
  path_url=/usuarios 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '112'} 
  body={"nome": "Glaucio QA Senior","email": "glauciosilveiraqa@qa.com.br","password": "teste","administrador": "true"} 
  </msg>
-<msg time="2024-07-30T17:46:30.210388" level="INFO">POST Response : url=https://serverest.dev/usuarios 
+<msg time="2024-07-31T18:17:23.512856" level="INFO">POST Response : url=https://serverest.dev/usuarios 
  status=201, reason=Created 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'a93eaf73040b4b3ad0a545aee06e217a;o=1', 'Date': 'Tue, 30 Jul 2024 20:46:33 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'a5478ebe02cdde00024a204968cfc006;o=1', 'Date': 'Wed, 31 Jul 2024 21:17:27 GMT', 'Server': 'Google Frontend', 'Content-Length': '82'} 
  body={
     "message": "Cadastro realizado com sucesso",
-    "_id": "ydIq2zt74Tyeyu0H"
+    "_id": "UauCx33T23Nx87Fg"
 } 
  </msg>
-<msg time="2024-07-30T17:46:30.210388" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-31T18:17:23.512856" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-30T17:46:30.210388" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
+<msg time="2024-07-31T18:17:23.512856" level="INFO">${RESPONSE} = &lt;Response [201]&gt;</msg>
 <var>${RESPONSE}</var>
 <arg>alias=api</arg>
 <arg>url=/usuarios</arg>
 <arg>headers=${header}</arg>
 <arg>data={"nome": "Glaucio QA Senior","email": "glauciosilveiraqa@qa.com.br","password": "teste","administrador": "true"}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-30T17:46:29.870288" elapsed="0.340100"/>
+<status status="PASS" start="2024-07-31T18:17:22.867752" elapsed="0.645104"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-30T17:46:30.210388" level="INFO">${USER_ID} = ydIq2zt74Tyeyu0H</msg>
+<msg time="2024-07-31T18:17:23.512856" level="INFO">${USER_ID} = UauCx33T23Nx87Fg</msg>
 <var>${USER_ID}</var>
 <arg>${RESPONSE.json()['_id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.210388" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.512856" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${USER_ID}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.210388" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.512856" elapsed="0.000000"/>
 </kw>
 <return>
 <value>${USER_ID}</value>
-<status status="PASS" start="2024-07-30T17:46:30.210388" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.512856" elapsed="0.000000"/>
 </return>
-<msg time="2024-07-30T17:46:30.210388" level="INFO">${USER_ID} = ydIq2zt74Tyeyu0H</msg>
+<msg time="2024-07-31T18:17:23.512856" level="INFO">${USER_ID} = UauCx33T23Nx87Fg</msg>
 <var>${USER_ID}</var>
-<status status="PASS" start="2024-07-30T17:46:29.870288" elapsed="0.340100"/>
+<status status="PASS" start="2024-07-31T18:17:22.867752" elapsed="0.645104"/>
 </kw>
 <kw name="Buscar usuario">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.373704" level="INFO">GET Request : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
- path_url=/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:23.682722" level="INFO">GET Request : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
+ path_url=/usuarios/UauCx33T23Nx87Fg 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-07-30T17:46:30.373704" level="INFO">GET Response : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:23.682722" level="INFO">GET Response : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'ffba0d776c572a161f0a46297f944065', 'Date': 'Tue, 30 Jul 2024 20:46:34 GMT', 'Server': 'Google Frontend', 'Content-Length': '164'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'a24ba7787d19fbed339b70893b22700a', 'Date': 'Wed, 31 Jul 2024 21:17:27 GMT', 'Server': 'Google Frontend', 'Content-Length': '164'} 
  body={
     "nome": "Glaucio QA Senior",
     "email": "glauciosilveiraqa@qa.com.br",
     "password": "teste",
     "administrador": "true",
-    "_id": "ydIq2zt74Tyeyu0H"
+    "_id": "UauCx33T23Nx87Fg"
 } 
  </msg>
-<msg time="2024-07-30T17:46:30.373704" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-31T18:17:23.682722" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-30T17:46:30.373704" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-31T18:17:23.682722" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
 <var>${RESPONSE}</var>
 <arg>alias=api</arg>
 <arg>url=/usuarios/${USER_ID}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.210388" elapsed="0.163316"/>
+<status status="PASS" start="2024-07-31T18:17:23.512856" elapsed="0.169866"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-30T17:46:30.373704" level="INFO">${retorno_get} = ydIq2zt74Tyeyu0H</msg>
+<msg time="2024-07-31T18:17:23.682722" level="INFO">${retorno_get} = UauCx33T23Nx87Fg</msg>
 <var>${retorno_get}</var>
 <arg>${RESPONSE.json()['_id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.373704" elapsed="0.006504"/>
+<status status="PASS" start="2024-07-31T18:17:23.682722" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${retorno_get}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.380208" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.682722" elapsed="0.010954"/>
 </kw>
 <arg>USER_ID=${USER_ID}</arg>
-<status status="PASS" start="2024-07-30T17:46:30.210388" elapsed="0.169820"/>
+<status status="PASS" start="2024-07-31T18:17:23.512856" elapsed="0.180820"/>
 </kw>
 <kw name="Atualizar dados usuario">
 <kw name="Create Dictionary" owner="BuiltIn">
-<msg time="2024-07-30T17:46:30.380208" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
+<msg time="2024-07-31T18:17:23.695182" level="INFO">${header} = {'Content-Type': 'application/json'}</msg>
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.380208" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.695182" elapsed="0.000000"/>
 </kw>
 <kw name="PUT On Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.540775" level="INFO">PUT Request : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
- path_url=/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:23.860517" level="INFO">PUT Request : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
+ path_url=/usuarios/UauCx33T23Nx87Fg 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '109'} 
  body={"nome": "Glaucio QA Senior Dois","email": "glaucioa2@qa.com.br","password": "teste","administrador": "true"} 
  </msg>
-<msg time="2024-07-30T17:46:30.540775" level="INFO">PUT Response : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:23.862089" level="INFO">PUT Response : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '8159fc2f9348016227e4c250b8c95c0f', 'Date': 'Tue, 30 Jul 2024 20:46:34 GMT', 'Server': 'Google Frontend', 'Content-Length': '50'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '3c9691f5017df0a4722f673ea2f39e00', 'Date': 'Wed, 31 Jul 2024 21:17:27 GMT', 'Server': 'Google Frontend', 'Content-Length': '50'} 
  body={
     "message": "Registro alterado com sucesso"
 } 
  </msg>
-<msg time="2024-07-30T17:46:30.540775" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-31T18:17:23.862089" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-30T17:46:30.550550" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-31T18:17:23.862663" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
 <var>${RESPONSE}</var>
 <arg>alias=api</arg>
 <arg>url=/usuarios/${USER_ID}</arg>
 <arg>headers=${header}</arg>
 <arg>data={"nome": "Glaucio QA Senior Dois","email": "glaucioa2@qa.com.br","password": "teste","administrador": "true"}</arg>
 <doc>Sends a PUT request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.380208" elapsed="0.170342"/>
+<status status="PASS" start="2024-07-31T18:17:23.695182" elapsed="0.167481"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-30T17:46:30.550550" level="INFO">${retorno_put} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;</msg>
+<msg time="2024-07-31T18:17:23.862663" level="INFO">${retorno_put} = &lt;bound method Response.json of &lt;Response [200]&gt;&gt;</msg>
 <var>${retorno_put}</var>
 <arg>${RESPONSE.json}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.550550" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.862663" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${retorno_put}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.550550" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:23.862663" elapsed="0.000000"/>
 </kw>
 <arg>USER_ID=${USER_ID}</arg>
-<status status="PASS" start="2024-07-30T17:46:30.380208" elapsed="0.170342"/>
+<status status="PASS" start="2024-07-31T18:17:23.693676" elapsed="0.168987"/>
 </kw>
 <kw name="Buscar usuario">
 <kw name="GET On Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.706984" level="INFO">GET Request : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
- path_url=/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:24.080094" level="INFO">GET Request : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
+ path_url=/usuarios/UauCx33T23Nx87Fg 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
  body=None 
  </msg>
-<msg time="2024-07-30T17:46:30.706984" level="INFO">GET Response : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:24.080094" level="INFO">GET Response : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '6d0720c918b56a8e6c96928b921aff1d', 'Date': 'Tue, 30 Jul 2024 20:46:34 GMT', 'Server': 'Google Frontend', 'Content-Length': '161'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '3c4c3dac738a6d82a3185e0f3259a3da', 'Date': 'Wed, 31 Jul 2024 21:17:27 GMT', 'Server': 'Google Frontend', 'Content-Length': '161'} 
  body={
     "nome": "Glaucio QA Senior Dois",
     "email": "glaucioa2@qa.com.br",
     "password": "teste",
     "administrador": "true",
-    "_id": "ydIq2zt74Tyeyu0H"
+    "_id": "UauCx33T23Nx87Fg"
 } 
  </msg>
-<msg time="2024-07-30T17:46:30.706984" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-31T18:17:24.082606" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
-<msg time="2024-07-30T17:46:30.706984" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
+<msg time="2024-07-31T18:17:24.082606" level="INFO">${RESPONSE} = &lt;Response [200]&gt;</msg>
 <var>${RESPONSE}</var>
 <arg>alias=api</arg>
 <arg>url=/usuarios/${USER_ID}</arg>
 <doc>Sends a GET request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.550550" elapsed="0.156434"/>
+<status status="PASS" start="2024-07-31T18:17:23.862663" elapsed="0.219943"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-07-30T17:46:30.706984" level="INFO">${retorno_get} = ydIq2zt74Tyeyu0H</msg>
+<msg time="2024-07-31T18:17:24.082606" level="INFO">${retorno_get} = UauCx33T23Nx87Fg</msg>
 <var>${retorno_get}</var>
 <arg>${RESPONSE.json()['_id']}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.706984" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:24.082606" elapsed="0.000000"/>
 </kw>
 <kw name="Log To Console" owner="BuiltIn">
 <arg>${retorno_get}</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.706984" elapsed="0.000000"/>
+<status status="PASS" start="2024-07-31T18:17:24.082606" elapsed="0.000000"/>
 </kw>
 <arg>USER_ID=${USER_ID}</arg>
-<status status="PASS" start="2024-07-30T17:46:30.550550" elapsed="0.156434"/>
+<status status="PASS" start="2024-07-31T18:17:23.862663" elapsed="0.219943"/>
 </kw>
 <kw name="Deletar usuario">
 <kw name="DELETE On Session" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.860453" level="INFO">DELETE Request : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
- path_url=/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:24.256124" level="INFO">DELETE Request : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
+ path_url=/usuarios/UauCx33T23Nx87Fg 
  headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
  body=None 
  </msg>
-<msg time="2024-07-30T17:46:30.860453" level="INFO">DELETE Response : url=https://serverest.dev/usuarios/ydIq2zt74Tyeyu0H 
+<msg time="2024-07-31T18:17:24.256124" level="INFO">DELETE Response : url=https://serverest.dev/usuarios/UauCx33T23Nx87Fg 
  status=200, reason=OK 
- headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': '35e245b74f7cd2c42125c7816cc08dea', 'Date': 'Tue, 30 Jul 2024 20:46:34 GMT', 'Server': 'Google Frontend', 'Content-Length': '51'} 
+ headers={'access-control-allow-origin': '*', 'x-dns-prefetch-control': 'off', 'x-frame-options': 'SAMEORIGIN', 'strict-transport-security': 'max-age=15552000; includeSubDomains', 'x-download-options': 'noopen', 'x-content-type-options': 'nosniff', 'x-xss-protection': '1; mode=block', 'content-type': 'application/json; charset=utf-8', 'X-Cloud-Trace-Context': 'b80cb1ef318feb6112b643ce427cecc2', 'Date': 'Wed, 31 Jul 2024 21:17:27 GMT', 'Server': 'Google Frontend', 'Content-Length': '51'} 
  body={
     "message": "Registro excluído com sucesso"
 } 
  </msg>
-<msg time="2024-07-30T17:46:30.860453" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+<msg time="2024-07-31T18:17:24.256124" level="INFO">C:\Users\glauc\AppData\Roaming\Python\Python312\site-packages\urllib3\connectionpool.py:1103: InsecureRequestWarning: Unverified HTTPS request is being made to host 'serverest.dev'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
   warnings.warn(</msg>
 <arg>alias=api</arg>
 <arg>url=/usuarios/${USER_ID}</arg>
 <doc>Sends a DELETE request on a previously created HTTP Session.</doc>
-<status status="PASS" start="2024-07-30T17:46:30.710489" elapsed="0.149964"/>
+<status status="PASS" start="2024-07-31T18:17:24.082606" elapsed="0.173518"/>
 </kw>
 <arg>USER_ID=${USER_ID}</arg>
-<status status="PASS" start="2024-07-30T17:46:30.710489" elapsed="0.149964"/>
+<status status="PASS" start="2024-07-31T18:17:24.082606" elapsed="0.176598"/>
 </kw>
-<kw name="Delete All Sessions" owner="RequestsLibrary">
-<msg time="2024-07-30T17:46:30.860453" level="INFO">Deleting All Sessions</msg>
-<doc>Removes all the session objects</doc>
-<status status="PASS" start="2024-07-30T17:46:30.860453" elapsed="0.000000"/>
-</kw>
-<status status="PASS" start="2024-07-30T17:46:29.870288" elapsed="0.990165"/>
+<status status="PASS" start="2024-07-31T18:17:22.867752" elapsed="1.392041"/>
 </test>
-<status status="PASS" start="2024-07-30T17:46:29.547826" elapsed="1.312627"/>
+<kw name="Deletar Sessão" type="TEARDOWN">
+<kw name="Delete All Sessions" owner="RequestsLibrary">
+<msg time="2024-07-31T18:17:24.261908" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2024-07-31T18:17:24.261908" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-07-31T18:17:24.260907" elapsed="0.001001"/>
+</kw>
+<status status="PASS" start="2024-07-31T18:17:22.466988" elapsed="1.794920"/>
 </suite>
-<status status="PASS" start="2024-07-30T17:46:29.546823" elapsed="1.313630"/>
+<status status="PASS" start="2024-07-31T18:17:22.464703" elapsed="1.798745"/>
 </suite>
-<status status="PASS" start="2024-07-30T17:46:29.526225" elapsed="1.344167"/>
+<status status="PASS" start="2024-07-31T18:17:22.435826" elapsed="1.827622"/>
 </suite>
 <statistics>
 <total>
